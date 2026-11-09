@@ -1,0 +1,13 @@
+Feature: User Authentication
+
+  Scenario Outline: Successful and unsuccessful login attempts
+    Given I am on the login page
+    When I enter "<username>" and "<password>"
+    Then I should see "<message>"
+
+    Examples:
+
+      | username | password | message               |
+      | user1    | pass1    | Welcome user1         |
+      | user2    | pass2    | Welcome user2         |
+      | locked   | wrongpwd | Error: Invalid login  |
